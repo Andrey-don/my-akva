@@ -1,0 +1,49 @@
+# Ignore all WordPress core except our fixes
+site/public_html/wp-admin/
+site/public_html/wp-includes/*
+site/public_html/wp-content/plugins/
+site/public_html/wp-content/themes/twentytwenty/
+site/public_html/wp-content/upgrade/
+site/public_html/wp-content/cache/
+site/public_html/wp-content/uploads/
+site/public_html/wp-content/debug.log
+site/public_html/wp-content/smush-webp/
+site/public_html/wp-content/languages/
+site/public_html/wp-content/mu-plugins/
+site/public_html/wp-content/index.php
+site/public_html/wp-content/themes/index.php
+
+# Keep our fixed core files (override the wp-includes/* exclusion)
+!site/public_html/wp-includes/class-wp-query.php
+!site/public_html/wp-includes/wp-db.php
+
+# WordPress config
+site/public_html/wp-config.php
+site/public_html/wp-config-sample.php
+
+# WordPress core PHP files (root)
+site/public_html/wp-activate.php
+site/public_html/wp-blog-header.php
+site/public_html/wp-comments-post.php
+site/public_html/wp-cron.php
+site/public_html/wp-links-opml.php
+site/public_html/wp-load.php
+site/public_html/wp-login.php
+site/public_html/wp-mail.php
+site/public_html/wp-settings.php
+site/public_html/wp-signup.php
+site/public_html/wp-trackback.php
+site/public_html/xmlrpc.php
+site/public_html/wp-snapshots/
+site/public_html/license.txt
+site/public_html/readme.html
+site/public_html/index.php
+
+# Other
+site/public_html/.protect/
+site/public_html/.htaccess-*
+Arhiv/
+
+# OS files
+.DS_Store
+Thumbs.db
