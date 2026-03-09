@@ -72,6 +72,35 @@ function new_excerpt_more( $more ){
 	return ' <a href="'. get_permalink($post) . '" class="info-btn w-button">подробнее</a>';
 }
 
+// Register custom post types (previously handled by Toolset Types plugin)
+add_action('init', function() {
+	register_post_type('equipmente', array(
+		'labels' => array(
+			'name'          => 'Оборудование',
+			'singular_name' => 'Оборудование',
+		),
+		'public'       => true,
+		'has_archive'  => true,
+		'rewrite'      => array('slug' => 'equipmente', 'with_front' => false, 'hierarchical' => true),
+		'supports'     => array('title', 'editor', 'thumbnail', 'excerpt', 'page-attributes'),
+		'hierarchical' => true,
+		'show_in_nav_menus' => true,
+	));
+
+	register_post_type('areas_of_use', array(
+		'labels' => array(
+			'name'          => 'Области применения',
+			'singular_name' => 'Область применения',
+		),
+		'public'       => true,
+		'has_archive'  => true,
+		'rewrite'      => array('slug' => 'areas_of_use', 'with_front' => false),
+		'supports'     => array('title', 'editor', 'thumbnail', 'excerpt'),
+		'hierarchical' => false,
+		'show_in_nav_menus' => true,
+	));
+});
+
 // Fix: WordPress 5.3.x + PHP 8.2 — missing root rewrite rule for static front page
 add_filter('rewrite_rules_array', function($rules) {
 	$front_page_id = get_option('page_on_front');
