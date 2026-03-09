@@ -75,7 +75,7 @@
 		</div>
 		<div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav">
 			<div class="container w-container">
-				<?php header_nav_menu(); ?>
+                <?php header_nav_menu(); ?>
 				<!-- <nav role="navigation" class="navmenu w-nav-menu">
 					<a href="<?=HOME_URL?>/o-kompanii/" class="navlink w-nav-link">О компании</a>
 					<div data-delay="0" data-hover="1" class="w-dropdown">

@@ -34,7 +34,7 @@ add_action( 'wp_enqueue_scripts', 'my_styles',999 );
 // require_once('custom/wp-bootstrap-navwalker.php');
 // require_once('custom/theme_settings.php');
 // require_once('custom/pagination.php');
-//require_once('custom/menu_walker.php');
+require_once('custom/menu_walker.php');
 require_once('custom/breadcumbs.php');
 require_once('custom/feature.php');  // Добавляем всякого
 
@@ -76,7 +76,7 @@ function new_excerpt_more( $more ){
 add_filter('rewrite_rules_array', function($rules) {
 	$front_page_id = get_option('page_on_front');
 	if (get_option('show_on_front') === 'page' && $front_page_id) {
-		$root_rule = array('^$' => 'index.php?page_id=' . intval($front_page_id));
+		$root_rule = array('$' => 'index.php?page_id=' . intval($front_page_id));
 		$rules = $root_rule + $rules;
 	}
 	return $rules;
