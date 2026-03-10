@@ -46,10 +46,11 @@ get_header();?>
 			<div class="div-block-10">
 				<div class="content-div-copy">
 					<div class="main-wrap">
-						<?php $questionnaire = get_field('questionnaire',46); ?>
-						<?php if($questionnaire): ?>
+						<?php $questionnaire = get_field('questionnaire',46);
+						$questionnaire_url = is_array($questionnaire) ? $questionnaire['url'] : $questionnaire; ?>
+						<?php if($questionnaire_url): ?>
 							<div class="cta-div">
-								<a href="<?=$questionnaire?>" class="cont-btn w-inline-block">
+								<a href="<?=$questionnaire_url?>" class="cont-btn w-inline-block">
 									<img src="<?=SPEC_IMAGES?>/doc.svg" alt="" class="btn-icn">
 									<div>скачать опросный лист на подбор оборудования</div>
 								</a>
