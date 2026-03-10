@@ -21,6 +21,7 @@ get_header();?>
 					<div class="div-block-6">
 						<h4 class="heading-3"><?php the_title(); ?></h4>
 						<?php the_excerpt(); ?>
+						<a href="<?php the_permalink(); ?>" class="info-btn w-button">подробнее</a>
 					</div>
 				</div>
 			<?php endwhile; ?>

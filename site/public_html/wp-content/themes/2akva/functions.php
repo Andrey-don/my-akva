@@ -68,8 +68,7 @@ add_filter( 'excerpt_length', function(){
 });
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 function new_excerpt_more( $more ){
-	global $post;
-	return ' <a href="'. get_permalink($post) . '" class="info-btn w-button">подробнее</a>';
+	return '...';
 }
 
 // Register custom post types (previously handled by Toolset Types plugin)
