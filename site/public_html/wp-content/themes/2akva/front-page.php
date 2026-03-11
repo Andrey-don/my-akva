@@ -9,6 +9,9 @@
 			<div class="tov-flex">
 				<?php if( have_rows('idei_oborudovanie_reshenija') ): $i=0;
 					while( have_rows('idei_oborudovanie_reshenija') ) : the_row();
+						$item_link = get_sub_field('item_link');
+						// HIDDEN: GEOdek block - remove condition to restore
+						if( empty($item_link) ) { $i++; continue; }
 						$item_img = get_sub_field('item_img')?>
 						<div class="tov-chld animated <?php echo $i%2==0? 'slideInLeft' : 'slideInRight'; ?>">
 							<?php if($item_img): ?>
