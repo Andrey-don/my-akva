@@ -16,6 +16,14 @@ define('SPEC_FONTS', SPEC_BASE_URL . '/fonts');
 define('MIN', '');
 
 
+// Downgrade jQuery to 3.x — webflow.js is incompatible with jQuery 4.0 (WP 6.9+)
+add_filter('script_loader_src', function($src, $handle) {
+	if ($handle === 'jquery-core') {
+		return 'https://code.jquery.com/jquery-3.7.1.min.js';
+	}
+	return $src;
+}, 10, 2);
+
 function my_scripts(){
 	wp_enqueue_script('webflow-js', SPEC_JS.'/webflow.js', array('jquery'), '', TRUE);
 	wp_enqueue_script('custom-js', SPEC_JS.'/custom.js', array('jquery'), '', TRUE);
