@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page { size: A4 landscape; margin: 1.5cm; }
+  body { font-family: Arial, sans-serif; font-size: 11pt; margin: 1cm; color: #000; }
+  h1 { font-size: 15pt; text-align: center; margin-bottom: 4pt; }
+  h2 { font-size: 13pt; margin-top: 20pt; border-bottom: 1px solid #000; padding-bottom: 4pt; }
+  h3 { font-size: 11pt; margin-top: 14pt; }
+  p { margin: 6pt 0; }
+  table { border-collapse: collapse; width: 100%; margin: 10pt 0; font-size: 10pt; table-layout: fixed; word-wrap: break-word; }
+  th { background-color: #1F4E79; color: white; padding: 5pt 6pt; text-align: left; }
+  td { border: 1px solid #aaa; padding: 4pt 6pt; vertical-align: top; word-wrap: break-word; overflow-wrap: break-word; }
+  tr:nth-child(even) td { background-color: #f2f2f2; }
+  .subtitle { text-align: center; font-size: 13pt; margin-bottom: 16pt; }
+  .info { margin: 4pt 0; }
+  .ok { color: green; font-weight: bold; }
+  .warning { background-color: #fff3cd; padding: 8pt; border-left: 4px solid #f0ad4e; margin: 10pt 0; }
+  hr { border: none; border-top: 2px solid #1F4E79; margin: 20pt 0; }
+  ul { margin: 6pt 0; padding-left: 20pt; }
+  li { margin: 3pt 0; }
+</style>
+</head>
+<body>
+
+<h1>Техническое задание и Отчёт о выполненных работах</h1>
+<p class="subtitle">Сайт: <strong>2akva.ru</strong></p>
+
+<hr>
+
+<h1>ЧАСТЬ 1. ТЕХНИЧЕСКОЕ ЗАДАНИЕ (ТЗ)</h1>
+
+<p class="info"><strong>Заказчик:</strong> ООО / ИП (владелец сайта 2akva.ru)</p>
+<p class="info"><strong>Исполнитель:</strong> Веб-разработчик</p>
+<p class="info"><strong>Объект работ:</strong> Сайт 2akva.ru на платформе WordPress</p>
+
+<hr>
+
+<h2>1. Цель работ</h2>
+<p>Привести сайт 2akva.ru в рабочее состояние после обновления хостинга и версий ПО, устранить критические ошибки, настроить почту, SSL-сертификат, безопасность и SEO.</p>
+
+<h2>2. Перечень задач</h2>
+
+<h3>2.1. Устранение критических ошибок PHP</h3>
+<ul>
+  <li>Обеспечить совместимость сайта с PHP 8.2/8.3</li>
+  <li>Устранить ошибку 404 на главной странице</li>
+  <li>Исправить устаревший код в файлах темы</li>
+</ul>
+
+<h3>2.2. Очистка и оптимизация плагинов</h3>
+<ul>
+  <li>Удалить неработающие, устаревшие и небезопасные плагины</li>
+  <li>Привести список плагинов в актуальное состояние</li>
+</ul>
+
+<h3>2.3. Исправление совместимости JavaScript</h3>
+<ul>
+  <li>Устранить конфликт библиотеки webflow.js с новой версией jQuery</li>
+</ul>
+
+<h3>2.4. Настройка отправки почты с сайта</h3>
+<ul>
+  <li>Настроить SMTP для отправки писем через контактные формы</li>
+  <li>Настроить Contact Form 7</li>
+</ul>
+
+<h3>2.5. Настройка DNS и корпоративной почты</h3>
+<ul>
+  <li>Настроить MX, SPF, DKIM, DMARC записи домена</li>
+  <li>Обеспечить доставку входящей почты на ящики сотрудников</li>
+</ul>
+
+<h3>2.6. Установка и настройка SSL</h3>
+<ul>
+  <li>Подключить HTTPS, настроить редирект с HTTP на HTTPS</li>
+  <li>Устранить ошибки смешанного контента</li>
+</ul>
+
+<h3>2.7. Настройка безопасности</h3>
+<ul>
+  <li>Установить и настроить плагин безопасности</li>
+  <li>Закрыть доступ к служебным файлам</li>
+</ul>
+
+<h3>2.8. Настройка SEO</h3>
+<ul>
+  <li>Настроить плагин Yoast SEO для типов записей сайта</li>
+</ul>
+
+<hr>
+
+<h1>ЧАСТЬ 2. ОТЧЁТ О ВЫПОЛНЕННЫХ РАБОТАХ</h1>
+
+<p class="info"><strong>Период выполнения:</strong> Март 2026 г.</p>
+<p class="info"><strong>Сайт:</strong> https://2akva.ru</p>
+<p class="info"><strong>Платформа:</strong> WordPress 6.9.4, PHP 8.3, хостинг Sweb.ru</p>
+
+<hr>
+
+<h2>Раздел 1. Устранение критических ошибок PHP</h2>
+<table>
+  <tr><th>#</th><th>Проблема</th><th>Решение</th><th>Файл</th></tr>
+  <tr>
+    <td>1</td>
+    <td>Главная страница сайта отдавала ошибку 404 из-за несовместимости ядра WordPress с PHP 8.0+</td>
+    <td>Исправлена ошибка в ядре WordPress: сравнение пустой строки с числом заменено на корректное числовое сравнение</td>
+    <td>wp-includes/class-wp-query.php, строка 756</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Критические PHP-ошибки в теме сайта из-за использования удалённой функции create_function()</td>
+    <td>Функция create_function() заменена на современные стрелочные функции (3 вхождения)</td>
+    <td>wp-content/themes/2akva/custom/feature.php</td>
+  </tr>
+</table>
+<p><strong>Результат:</strong> Сайт полностью открывается, ошибок PHP нет.</p>
+
+<h2>Раздел 2. Очистка плагинов</h2>
+<table>
+  <tr><th>#</th><th>Плагин</th><th>Действие</th><th>Причина</th></tr>
+  <tr><td>1</td><td>Yoast SEO Premium (пиратская копия)</td><td>Удалён</td><td>Вызывал Fatal Error на PHP 8.2, лицензия недействительна</td></tr>
+  <tr><td>2</td><td>MotoPress</td><td>Удалён</td><td>Не используется, создавал нагрузку</td></tr>
+  <tr><td>3</td><td>Toolset Types</td><td>Удалён</td><td>Не используется</td></tr>
+  <tr><td>4</td><td>Webcraftic Clearfy</td><td>Удалён</td><td>Не используется</td></tr>
+  <tr><td>5</td><td>MonsterInsights Pro</td><td>Удалён</td><td>Не используется</td></tr>
+</table>
+<p><strong>Результат:</strong> Сайт освобождён от лишних плагинов, стабильность повышена.</p>
+
+<h2>Раздел 3. Исправление совместимости jQuery</h2>
+<table>
+  <tr><th>#</th><th>Проблема</th><th>Решение</th></tr>
+  <tr>
+    <td>1</td>
+    <td>WordPress 6.9+ поставляется с jQuery 4.0, который несовместим с библиотекой webflow.js, используемой в теме сайта</td>
+    <td>В файл functions.php добавлен фильтр, заменяющий jQuery 4.0 на версию 3.7.1. Исправление применено как на локальной версии, так и на хостинге Sweb.ru</td>
+  </tr>
+</table>
+<p><strong>Результат:</strong> Интерактивные элементы сайта (меню, анимации) работают корректно.</p>
+
+<h2>Раздел 4. Настройка отправки почты с сайта</h2>
+<table>
+  <tr><th>#</th><th>Задача</th><th>Решение</th></tr>
+  <tr><td>1</td><td>Письма с контактных форм не доставлялись</td><td>Установлен и настроен плагин WP Mail SMTP с подключением к SMTP-серверу Spaceweb</td></tr>
+  <tr><td>2</td><td>Contact Form 7 "Запрос на обратный звонок" был настроен на недействующие адреса</td><td>Исправлены поля От (From) и Кому (To) на актуальный адрес info@2akva.ru</td></tr>
+</table>
+<p><strong>Результат:</strong> Заявки с сайта доставляются на info@2akva.ru.</p>
+
+<h2>Раздел 5. Настройка DNS и корпоративной почты</h2>
+<table>
+  <tr><th>#</th><th>Запись</th><th>Значение</th><th>Назначение</th></tr>
+  <tr><td>1</td><td>MX</td><td>mx.yandex.net (приоритет 10)</td><td>Входящая почта → Яндекс 360</td></tr>
+  <tr><td>2</td><td>SPF (TXT @)</td><td>v=spf1 include:_spf.yandex.net include:spaceweb.ru ~all</td><td>Авторизация серверов отправки</td></tr>
+  <tr><td>3</td><td>DMARC (TXT _dmarc)</td><td>v=DMARC1; p=none; rua=mailto:info@2akva.ru</td><td>Политика проверки почты</td></tr>
+  <tr><td>4</td><td>DKIM (TXT sweb._domainkey)</td><td>Ключ Spaceweb</td><td>Цифровая подпись исходящих писем</td></tr>
+</table>
+<div class="warning">
+  <strong>Инцидент (14–16 марта 2026):</strong> В результате настройки SMTP MX-запись была ошибочно изменена на сервер Spaceweb, что привело к прекращению доставки входящей почты всем сотрудникам на 2 дня. 16 марта 2026 г. MX-запись восстановлена на Яндекс 360, доставка почты возобновлена.
+</div>
+<p><strong>Результат:</strong> Входящая почта на ящики @2akva.ru работает, письма с сайта не попадают в спам.</p>
+
+<h2>Раздел 6. SSL / HTTPS</h2>
+<table>
+  <tr><th>#</th><th>Задача</th><th>Решение</th></tr>
+  <tr><td>1</td><td>Сайт работал по HTTP</td><td>Подключён SSL-сертификат, настроен 301-редирект с HTTP на HTTPS через .htaccess</td></tr>
+  <tr><td>2</td><td>Ошибки смешанного контента (mixed content)</td><td>Включена автоматическая замена HTTP → HTTPS для всех ресурсов страницы</td></tr>
+</table>
+<p><strong>Результат:</strong> Сайт работает по HTTPS, замок в браузере отображается корректно.</p>
+
+<h2>Раздел 7. Безопасность</h2>
+<table>
+  <tr><th>#</th><th>Задача</th><th>Решение</th></tr>
+  <tr><td>1</td><td>Отсутствие базовой защиты</td><td>Установлен плагин Really Simple Security, активированы все базовые параметры защиты</td></tr>
+  <tr><td>2</td><td>Файл debug.log был публично доступен</td><td>В .htaccess добавлен запрет доступа к файлу debug.log</td></tr>
+  <tr><td>3</td><td>Логи отладки выводились на экран посетителям</td><td>wp-config.php настроен: вывод ошибок отключён, лог пишется в защищённый файл</td></tr>
+  <tr><td>4</td><td>Сканирование уязвимостей</td><td>Проведено: уязвимостей не найдено (0 критических проблем)</td></tr>
+</table>
+<p><strong>Результат:</strong> Сайт соответствует базовым требованиям безопасности WordPress.</p>
+
+<h2>Раздел 8. SEO</h2>
+<table>
+  <tr><th>#</th><th>Задача</th><th>Решение</th></tr>
+  <tr><td>1</td><td>SEO-плагин отсутствовал (пиратская версия была удалена)</td><td>Установлен Yoast SEO (бесплатная лицензионная версия v27.1.1)</td></tr>
+  <tr><td>2</td><td>Пользовательские типы записей не индексировались</td><td>Yoast SEO настроен для типов записей: оборудование, области применения</td></tr>
+</table>
+<p><strong>Результат:</strong> Сайт оптимизирован для поисковых систем, мета-теги и sitemap работают корректно.</p>
+
+<hr>
+
+<h2>Итоговый статус сайта</h2>
+<table>
+  <tr><th>Параметр</th><th>Статус</th></tr>
+  <tr><td>Главная страница</td><td class="ok">Работает ✓</td></tr>
+  <tr><td>WordPress</td><td class="ok">6.9.4 ✓</td></tr>
+  <tr><td>PHP</td><td class="ok">8.3 ✓</td></tr>
+  <tr><td>HTTPS/SSL</td><td class="ok">Работает ✓</td></tr>
+  <tr><td>Отправка почты с сайта</td><td class="ok">Работает ✓</td></tr>
+  <tr><td>Входящая почта сотрудников</td><td class="ok">Работает ✓</td></tr>
+  <tr><td>SPF/DKIM/DMARC</td><td class="ok">Настроено ✓</td></tr>
+  <tr><td>Контактные формы</td><td class="ok">Работают ✓</td></tr>
+  <tr><td>Безопасность</td><td class="ok">Настроена ✓</td></tr>
+  <tr><td>Yoast SEO</td><td class="ok">Настроен ✓</td></tr>
+  <tr><td>Health-проверка WordPress</td><td class="ok">Хорошо ✓</td></tr>
+</table>
+
+<p style="margin-top:30pt; color:#666;"><em>Документ составлен: 16 марта 2026 г.</em></p>
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { font-family: "Times New Roman", serif; font-size: 12pt; margin: 2cm 2.5cm; color: #000; }
+  h1 { text-align: center; font-size: 16pt; margin-bottom: 4px; }
+  h2 { font-size: 13pt; border-bottom: 2px solid #000; padding-bottom: 4px; margin-top: 28px; }
+  .subtitle { text-align: center; font-size: 12pt; margin-top: 0; margin-bottom: 24px; color: #333; }
+  table.t { width: 100%; border-collapse: collapse; margin: 8px 0 16px 0; }
+  table.t td { border: 1px solid #000; padding: 7px 10px; vertical-align: top; font-size: 11pt; }
+  table.t th { border: 1px solid #000; padding: 7px 10px; background-color: #d0d0d0; text-align: center; font-size: 11pt; font-weight: bold; }
+  td.lbl { width: 35%; font-weight: bold; background-color: #f0f0f0; }
+  td.val { width: 65%; }
+  .ok { color: #006400; font-weight: bold; }
+  .warn { color: #8B6914; font-weight: bold; }
+  ul { margin: 4px 0; padding-left: 20px; }
+  li { margin-bottom: 3px; }
+  .updated { text-align: right; font-size: 10pt; color: #555; font-style: italic; margin-top: 30px; }
+  .section-note { font-size: 10pt; font-style: italic; color: #555; margin: 4px 0 8px 0; }
+</style>
+</head>
+<body>
+
+<h1>ПАСПОРТ ПРОЕКТА</h1>
+<p class="subtitle">Сайт <strong>https://2akva.ru</strong> — ООО «2Н АКВА»</p>
+
+<!-- ====================== 1. ОБЩАЯ ИНФОРМАЦИЯ ====================== -->
+<h2>1. Общая информация о проекте</h2>
+<table class="t">
+  <tr><td class="lbl">Организация</td><td class="val">ООО «2Н АКВА»</td></tr>
+  <tr><td class="lbl">Руководитель</td><td class="val">Гагуа В.В. (Генеральный директор)</td></tr>
+  <tr><td class="lbl">Сайт (продакшн)</td><td class="val"><a href="https://2akva.ru">https://2akva.ru</a></td></tr>
+  <tr><td class="lbl">Тематика сайта</td><td class="val">Водоподготовка, насосное оборудование, дренажные системы (2H GEOdek)</td></tr>
+  <tr><td class="lbl">Исполнитель (разработчик)</td><td class="val">___________________________</td></tr>
+  <tr><td class="lbl">Корпоративная почта</td><td class="val">info@2akva.ru (и другие ящики @2akva.ru)</td></tr>
+</table>
+
+<!-- ====================== 2. ТЕХНИЧЕСКАЯ ИНФРАСТРУКТУРА ====================== -->
+<h2>2. Техническая инфраструктура</h2>
+<table class="t">
+  <tr><th colspan="2">Хостинг и сервер</th></tr>
+  <tr><td class="lbl">Хостинг-провайдер</td><td class="val">Sweb.ru (SpaceWeb)</td></tr>
+  <tr><td class="lbl">Панель управления</td><td class="val">cp.sweb.ru</td></tr>
+  <tr><td class="lbl">IP-адрес сайта</td><td class="val">77.222.62.59</td></tr>
+  <tr><td class="lbl">PHP</td><td class="val">8.3</td></tr>
+  <tr><td class="lbl">MySQL</td><td class="val">8.0</td></tr>
+  <tr><td class="lbl">SSL-сертификат</td><td class="val"><span class="ok">Активен ✓</span> — HTTPS работает, redirect 301 через .htaccess</td></tr>
+
+  <tr><th colspan="2">CMS и тема</th></tr>
+  <tr><td class="lbl">CMS</td><td class="val">WordPress 6.9.4</td></tr>
+  <tr><td class="lbl">Тема</td><td class="val">2akva (кастомная)</td></tr>
+  <tr><td class="lbl">Папка темы</td><td class="val">wp-content/themes/2akva/</td></tr>
+  <tr><td class="lbl">Главная страница</td><td class="val">ID: 42, post_name: glavnaja, шаблон: front-page.php</td></tr>
+
+  <tr><th colspan="2">DNS-записи домена (управляются в cp.sweb.ru)</th></tr>
+  <tr><td class="lbl">NS-серверы</td><td class="val">ns1.spaceweb.ru, ns2.spaceweb.ru, ns3.spaceweb.pro, ns4.spaceweb.pro</td></tr>
+  <tr><td class="lbl">MX (входящая почта)</td><td class="val">mx.yandex.net. (приоритет 10) — <strong>не менять!</strong> Сотрудники используют Яндекс 360</td></tr>
+  <tr><td class="lbl">SPF</td><td class="val">v=spf1 include:_spf.yandex.net include:spaceweb.ru ~all</td></tr>
+  <tr><td class="lbl">DKIM (Spaceweb)</td><td class="val">sweb._domainkey (TXT)</td></tr>
+  <tr><td class="lbl">DMARC</td><td class="val">v=DMARC1; p=none; rua=mailto:info@2akva.ru</td></tr>
+  <tr><td class="lbl">Яндекс верификация</td><td class="val">yamail-785f35779172.2akva.ru → mail.yandex.ru. (CNAME)</td></tr>
+
+  <tr><th colspan="2">Локальная среда разработки</th></tr>
+  <tr><td class="lbl">Local WP</td><td class="val">C:/Users/profi/Local Sites/2akva/app/public/</td></tr>
+  <tr><td class="lbl">Локальный URL</td><td class="val">http://2akva.local</td></tr>
+  <tr><td class="lbl">PHP (local)</td><td class="val">8.3.29</td></tr>
+  <tr><td class="lbl">MySQL (local)</td><td class="val">8.0.35</td></tr>
+
+  <tr><th colspan="2">Репозиторий</th></tr>
+  <tr><td class="lbl">Git (локальный)</td><td class="val">C:/Users/profi/Documents/Project/2KVA</td></tr>
+  <tr><td class="lbl">GitHub</td><td class="val">Andrey-don/my-akva</td></tr>
+  <tr><td class="lbl">Ветка</td><td class="val">master</td></tr>
+  <tr><td class="lbl">WP-файлы в репо</td><td class="val">site/public_html/</td></tr>
+</table>
+
+<!-- ====================== 3. ПЛАГИНЫ ====================== -->
+<h2>3. Плагины WordPress</h2>
+<table class="t">
+  <tr><th>Плагин</th><th>Версия</th><th>Статус</th><th>Назначение</th></tr>
+  <tr>
+    <td>ACF (Advanced Custom Fields)</td><td>—</td>
+    <td class="ok">Активен ✓</td>
+    <td>Кастомные поля (в т.ч. Repeater для главной)</td>
+  </tr>
+  <tr>
+    <td>ACF Repeater</td><td>—</td>
+    <td class="ok">Активен ✓</td>
+    <td>Повторяющиеся блоки на главной странице</td>
+  </tr>
+  <tr>
+    <td>Yoast SEO</td><td>27.1.1</td>
+    <td class="ok">Активен ✓</td>
+    <td>SEO-оптимизация, XML-карта сайта</td>
+  </tr>
+  <tr>
+    <td>WP Mail SMTP</td><td>—</td>
+    <td class="ok">Активен ✓</td>
+    <td>Отправка писем через Spaceweb SMTP</td>
+  </tr>
+  <tr>
+    <td>Contact Form 7</td><td>—</td>
+    <td class="ok">Активен ✓</td>
+    <td>Контактные формы (From/To: info@2akva.ru)</td>
+  </tr>
+  <tr>
+    <td>Really Simple Security</td><td>—</td>
+    <td class="ok">Активен ✓</td>
+    <td>SSL, защита, mixed content fix</td>
+  </tr>
+  <tr>
+    <td>Duplicator</td><td>1.5.15</td>
+    <td class="warn">Неактивен (хранить!)</td>
+    <td>Резервное копирование и миграция на хостинг</td>
+  </tr>
+</table>
+
+<!-- ====================== 4. ВЫПОЛНЕННЫЕ РАБОТЫ ====================== -->
+<h2>4. Выполненные работы (хронология)</h2>
+<table class="t">
+  <tr><th style="width:15%;">Дата</th><th>Работа</th><th style="width:20%;">Статус</th></tr>
+  <tr>
+    <td>Март 2026</td>
+    <td>Исправление ошибки 404 на главной странице (PHP 8.0+ несовместимость в wp-includes/class-wp-query.php, строка 756)</td>
+    <td class="ok">Выполнено ✓</td>
+  </tr>
+  <tr>
+    <td>Март 2026</td>
+    <td>Замена create_function() на стрелочные функции в custom/feature.php (3 вхождения)</td>
+    <td class="ok">Выполнено ✓</td>
+  </tr>
+  <tr>
+    <td>Март 2026</td>
+    <td>Удаление опасных/нерабочих плагинов: Yoast Premium (cracked), MotoPress, Toolset Types, Clearfy, MonsterInsights Pro</td>
+    <td class="ok">Выполнено ✓</td>
+  </tr>
+  <tr>
+    <td>Март 2026</td>
+    <td>Установка и настройка Yoast SEO (бесплатная версия), настройка для CPT equipment + areas_of_use</td>
+    <td class="ok">Выполнено ✓</td>
+  </tr>
+  <tr>
+    <td>Март 2026</td>
+    <td>Исправление несовместимости jQuery 4.0 и webflow.js — фильтр в functions.php (jQuery 4.0 → 3.7.1 CDN)</td>
+    <td class="ok">Выполнено ✓</td>
+  </tr>
+  <tr>
+    <td>Март 2026</td>
+    <td>Настройка SSL/HTTPS, 301 redirect через .htaccess, устранение mixed content</td>
+    <td class="ok">Выполнено ✓</td>
+  </tr>
+  <tr>
+    <td>Март 2026</td>
+    <td>Настройка безопасности (Really Simple Security), закрытие debug.log через .htaccess</td>
+    <td class="ok">Выполнено ✓</td>
+  </tr>
+  <tr>
+    <td>12.03.2026</td>
+    <td>Настройка WP Mail SMTP (Spaceweb SMTP), Contact Form 7, SPF/DKIM/DMARC</td>
+    <td class="ok">Выполнено ✓</td>
+  </tr>
+  <tr>
+    <td>16.03.2026</td>
+    <td>Восстановление MX-записи домена: удалена mail.spaceweb.ru, добавлена mx.yandex.net (приоритет 10). Обновлена SPF-запись. Почта сотрудников восстановлена.</td>
+    <td class="ok">Выполнено ✓</td>
+  </tr>
+  <tr>
+    <td>Март 2026</td>
+    <td>Скрыт блок GEOdek на главной странице (нет ссылки на товар)</td>
+    <td class="ok">Выполнено ✓</td>
+  </tr>
+  <tr>
+    <td>Март 2026</td>
+    <td>Исправление ссылки Array на странице архива areas_of_use</td>
+    <td class="ok">Выполнено ✓</td>
+  </tr>
+</table>
+
+<!-- ====================== 5. ТЕКУЩИЙ СТАТУС ====================== -->
+<h2>5. Текущий статус сайта (март 2026)</h2>
+<table class="t">
+  <tr><th style="width:40%;">Параметр</th><th>Статус</th></tr>
+  <tr><td>Главная страница</td><td class="ok">Работает ✓</td></tr>
+  <tr><td>WordPress 6.9.4 / PHP 8.3</td><td class="ok">Совместимость ✓</td></tr>
+  <tr><td>HTTPS / SSL</td><td class="ok">Работает ✓</td></tr>
+  <tr><td>Входящая почта @2akva.ru (Яндекс 360)</td><td class="ok">Работает ✓</td></tr>
+  <tr><td>Отправка писем с сайта (SMTP)</td><td class="ok">Работает ✓</td></tr>
+  <tr><td>SPF / DKIM / DMARC</td><td class="ok">Настроено ✓</td></tr>
+  <tr><td>Безопасность (Really Simple Security)</td><td class="ok">Настроено ✓</td></tr>
+  <tr><td>Yoast SEO</td><td class="ok">Настроено ✓</td></tr>
+  <tr><td>Site Health</td><td class="ok">Хорошо ✓</td></tr>
+  <tr><td>jQuery / webflow.js</td><td class="ok">Совместимость ✓</td></tr>
+</table>
+
+<!-- ====================== 6. ВАЖНЫЕ ПРЕДУПРЕЖДЕНИЯ ====================== -->
+<h2>6. Важные предупреждения</h2>
+<table class="t">
+  <tr>
+    <td style="color:#8B0000; font-weight:bold;">⚠ MX-запись</td>
+    <td>НЕ менять MX-запись с mx.yandex.net! Все сотрудники используют Яндекс 360 (@2akva.ru). Смена MX приведёт к потере входящей почты.</td>
+  </tr>
+  <tr>
+    <td style="color:#8B0000; font-weight:bold;">⚠ wp-includes/class-wp-query.php</td>
+    <td>Файл содержит ручное исправление (строка 756: intval()). При обновлении WordPress файл будет перезаписан — исправление нужно будет внести повторно.</td>
+  </tr>
+  <tr>
+    <td style="color:#8B0000; font-weight:bold;">⚠ jQuery</td>
+    <td>Фильтр в functions.php заменяет jQuery 4.0 → 3.7.1. При обновлении темы проверить, что фильтр сохранился.</td>
+  </tr>
+  <tr>
+    <td style="color:#8B6914; font-weight:bold;">⚠ Резервные копии</td>
+    <td>Перед обновлением WordPress, PHP или плагинов — создавать резервную копию через Duplicator (плагин установлен, неактивен).</td>
+  </tr>
+</table>
+
+<!-- ====================== 7. ДОКУМЕНТЫ ПРОЕКТА ====================== -->
+<h2>7. Документы проекта</h2>
+<table class="t">
+  <tr><th>Документ</th><th>Файл</th></tr>
+  <tr><td>ТЗ на техническую поддержку сайта</td><td>ТЗ_Отчет\ТЗ_2akva.ru.html</td></tr>
+  <tr><td>Отчёт о технических работах</td><td>ТЗ_Отчет\Отчет_2akva.ru.html</td></tr>
+  <tr><td>ТЗ на ежемесячное продвижение (SEO + Директ)</td><td>ТЗ_Отчет\ТЗ_Продвижение_2akva.ru.html</td></tr>
+  <tr><td>Шаблон ежемесячного отчёта по продвижению</td><td>ТЗ_Отчет\Отчет_Продвижение_2akva.ru.html</td></tr>
+</table>
+
+<p class="updated">Документ обновлён: 17 марта 2026 г.</p>
+
+</body>
+</html>
