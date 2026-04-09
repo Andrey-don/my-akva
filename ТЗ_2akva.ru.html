@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Техническое задание — 2akva.ru</title>
+<style>
+  body {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    margin: 2cm 2.5cm;
+    color: #000;
+  }
+  .doc-header {
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 11pt;
+    border-bottom: 1px solid #000;
+    padding-bottom: 6px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 13pt;
+    font-weight: bold;
+    margin: 20px 0 16px 0;
+  }
+  table.tz {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+  }
+  table.tz td {
+    border: 1px solid #000;
+    padding: 8px 10px;
+    vertical-align: top;
+    font-size: 11pt;
+  }
+  td.num {
+    width: 4%;
+    text-align: center;
+    vertical-align: middle;
+  }
+  td.label {
+    width: 32%;
+    vertical-align: top;
+  }
+  td.value {
+    width: 64%;
+    vertical-align: top;
+  }
+  ul.works {
+    margin: 0;
+    padding-left: 18px;
+  }
+  ul.works li {
+    margin-bottom: 5px;
+  }
+  .signatures {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    font-size: 11pt;
+  }
+  .sig-block {
+    width: 45%;
+  }
+  .sig-block .role {
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  .sig-line {
+    border-bottom: 1px solid #000;
+    margin-top: 28px;
+    margin-bottom: 4px;
+  }
+  .from-behalf {
+    margin-top: 20px;
+    font-size: 11pt;
+  }
+  .from-behalf .role-title {
+    margin: 6px 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="doc-header">
+  № ____ от &laquo;____&raquo; ________________ _______ г.
+</div>
+
+<h1>Техническое задание на выполнение работ</h1>
+
+<table class="tz">
+  <tr>
+    <td class="num">1</td>
+    <td class="label">Наименование работ</td>
+    <td class="value">Техническое обслуживание и доработка сайта 2akva.ru на платформе WordPress</td>
+  </tr>
+  <tr>
+    <td class="num">2</td>
+    <td class="label">Место проведения работ</td>
+    <td class="value">Сайт 2akva.ru (хостинг Sweb.ru); локальная копия 2akva.local</td>
+  </tr>
+  <tr>
+    <td class="num">3</td>
+    <td class="label">Объёмы работ</td>
+    <td class="value">
+      <ul class="works">
+        <li>Выявить причину ошибки 404 на главной странице и устранить её</li>
+        <li>Найти причину, по которой невозможно установить актуальную версию PHP&nbsp;8.2/8.3, и обеспечить совместимость сайта с PHP&nbsp;8.3</li>
+        <li>Проверить работу установленных плагинов, выявить и удалить неработающие</li>
+        <li>Исправить несовместимости JavaScript: устранить конфликт библиотеки webflow.js с jQuery&nbsp;4.0, поставляемой в WordPress&nbsp;6.9+</li>
+        <li>Настроить передачу данных из форм сайта на корпоративную почту и SMTP</li>
+        <li>Настроить DNS-записи домена: MX, SPF, DKIM, DMARC — для корректной работы корпоративной почты @2akva.ru</li>
+        <li>Подключить SSL-сертификат, настроить HTTPS и 301-редирект с HTTP</li>
+        <li>Настроить безопасность сайта: ограничить доступ к служебным файлам, установить и настроить плагин безопасности</li>
+        <li>Установить и настроить SEO-плагин (Yoast SEO) для всех типов записей сайта</li>
+        <li>Перевести видеоматериалы с YouTube в медиатеку сайта WordPress — для обеспечения независимости воспроизведения видео при блокировке YouTube на территории РФ</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td class="num">4</td>
+    <td class="label">Сроки выполнения работ</td>
+    <td class="value">До 24 апреля 2026 г.</td>
+  </tr>
+  <tr>
+    <td class="num">5</td>
+    <td class="label">Перечень материалов, передаваемых Заказчиком, и требования к ним</td>
+    <td class="value">
+      Заказчик передаёт Исполнителю:
+      <ul class="works">
+        <li>Доступ к административной панели WordPress (логин, пароль)</li>
+        <li>Доступ к панели управления хостингом (cp.sweb.ru)</li>
+        <li>Доступ к DNS-настройкам домена</li>
+        <li>Видеофайлы или ссылки на видеоматериалы, размещённые на YouTube</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td class="num">6</td>
+    <td class="label">Требования к качеству работы (обязательные требования, свойства, цель)</td>
+    <td class="value">
+      По завершении работ сайт 2akva.ru должен:
+      <ul class="works">
+        <li>Открываться без ошибок на PHP&nbsp;8.3</li>
+        <li>Работать по протоколу HTTPS без ошибок смешанного контента</li>
+        <li>Корректно отправлять заявки с форм на корпоративную почту info@2akva.ru</li>
+        <li>Содержать только актуальные и совместимые плагины</li>
+        <li>Иметь настроенную защиту от базовых угроз</li>
+        <li>Иметь корректно настроенный SEO-плагин с рабочим sitemap.xml</li>
+        <li>Воспроизводить видеоматериалы независимо от доступности YouTube</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td class="num">7</td>
+    <td class="label">Гарантийный срок для результата работы</td>
+    <td class="value">_____ месяцев с момента подписания Акта о приёмке выполненных работ</td>
+  </tr>
+  <tr>
+    <td class="num">8</td>
+    <td class="label">Особые условия</td>
+    <td class="value">
+      <ul class="works">
+        <li>Перед началом работ Исполнитель обязан выполнить резервное копирование сайта и базы данных</li>
+        <li>Результаты выполненных работ фиксируются в Отчёте о выполненных работах</li>
+        <li>Не изменять MX-запись домена — корпоративная почта @2akva.ru работает через Яндекс&nbsp;360</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<div class="signatures">
+  <div class="sig-block">
+    <div class="role">Заказчик</div>
+    <strong>ООО «2Н АКВА»</strong>
+  </div>
+  <div class="sig-block">
+    <div class="role">Подрядчик</div>
+    &nbsp;
+  </div>
+</div>
+
+<div class="from-behalf">
+  <table style="width:100%; border:none; margin-top:20px;">
+    <tr>
+      <td style="width:50%; border:none; vertical-align:top;">
+        От имени Заказчика<br><br>
+        <span class="role-title">Генеральный директор</span><br><br>
+        <span style="border-bottom:1px solid #000; display:inline-block; min-width:180px;">&nbsp;</span>&nbsp; Гагуа В.В.
+      </td>
+      <td style="width:50%; border:none; vertical-align:top;">
+        От имени Подрядчика<br><br>
+        &nbsp;<br><br>
+        <span style="border-bottom:1px solid #000; display:inline-block; min-width:180px;">&nbsp;</span>
+      </td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>
